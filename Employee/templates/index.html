@@ -1,0 +1,31 @@
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="emp-details">
+    {% for e in emp_list %}
+    {{e.emp_name}} <br>
+    {{e.dep}}<br><br>
+{% endfor %}
+</div>
+
+<div class="image-file">
+    <span>image 1</span>
+    <img src="{% static 'images/1.jpg' %}" alt="image1" width="300px" height="250px">
+</div>
+
+<div class="image-file-2" >
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nostrum ducimus beatae aliquam rem sit sunt ea excepturi cum, itaque exercitationem quasi officia consectetur harum! Laudantium accusantium nobis nostrum quo!</p>
+</div>
+ 
+<!--backend-->
+
+<div class="mypic-files">
+    {% for i in img %}
+    <p>{{i.staff}}</p>
+    <img src="{{i.image.url}}">
+    {% endfor %}
+</div>
+
+ 
