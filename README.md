@@ -1,9 +1,9 @@
 # DJ-MVC-Pattern-Sample-
 
-* **django MVC pattern sample project
+* ** django MVC pattern sample project
 
 
-* **Functionalities include
+* ** Functionalities include
 ---
 * Table creation in database
 * Foriegnkey
