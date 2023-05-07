@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/' %}">
+{% endblock %}
+
+
+{% block content %} 
+
+
+
+<form enctype="multipart/form-data" action="" method='post'>
+    {% csrf_token %}
+    <input type="number" name='ind_no' placeholder="No.">
+    <input type="text" name="s_name" placeholder="Enter name" required/>
+    <input type="text" name="s_place" placeholder="Place" required/>
+    <input type="text" name="s_course" placeholder="Course" required/>
+    <a href=""><button type="submit">ADD</button></a>
+</form>
+
+{% endblock %}

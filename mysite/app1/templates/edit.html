@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/' %}">
+{% endblock %}
+
+
+{% block content %} 
+
+
+
+<form action="{% url 'edit' s_id=field_edit_var.id %}" method='post'>
+    {% csrf_token %}
+    <input type="number" name='ind_no' placeholder="No." value="{{field_edit_var.indx_no_field}}">
+    <input type="text" name="s_name" placeholder="Enter name" value="{{field_edit_var.name_field}}" required/>
+    <input type="text" name="s_place" placeholder="Place" value="{{field_edit_var.place_field}}" required/>
+    <input type="text" name="s_course" placeholder="Course" value="{{field_edit_var.course_field}}" required/>
+    <button type="submit" value='post' >UPDATE</button>
+</form>
+
+{% endblock %}
