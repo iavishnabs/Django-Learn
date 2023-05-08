@@ -23,5 +23,5 @@ pip install pillow
 
 ### html file
 * {% for i in items %}
-* <img src="{{i.img.url}}" alt = ""/>
+* *<img src="{{i.img.url}}" alt = ""/>
 * {% endfor %}
