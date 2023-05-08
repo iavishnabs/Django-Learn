@@ -18,6 +18,7 @@ pip install pillow
 * from . conf.urls.static import static
 
 * urlpatterns=[
+* path(....)
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 
