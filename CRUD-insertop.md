@@ -20,14 +20,14 @@ ob = studentdata(s_name = name,s_course= course) -- studentdata is a table creat
 
 * create a table and add each fields by context process (
 
-####views.py index functioon define:
+###views.py index functioon define:
 d = {
 'objects':studentdatas.objects.all()
 }
 return render(request,'index.html',d)
 )
 
-####index.html
+###index.html
 {%  for i in objects %}
 {{i.s_name}}
 {{i.s_course}}
