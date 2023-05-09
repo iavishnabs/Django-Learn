@@ -32,3 +32,4 @@ return render(request,'index.html',d)
 {{i.s_name}}
 {{i.s_course}}
 {% endfor %}
+)
