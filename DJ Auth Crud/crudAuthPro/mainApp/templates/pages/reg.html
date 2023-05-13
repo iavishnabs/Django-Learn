@@ -1,0 +1,14 @@
+{% load static %}
+
+<center><h1>sign up here</h1></center> 
+
+<form action="" method="post">
+    <input type="text" name="firstname" placeholder="first name" required/>
+    <input type="text" name="lastname" placeholder="last name" required/>
+    <input type="email" name="useremail" placeholder="email address" required/>
+    <input type="password" name="upassword" placeholder="password" required/>
+    <input type="password" name="cpassword" placeholder="confirm password" required/>
+    <button type="button" value="submit">submit</button>
+</form>
+
+<h4>already registered ? <a href="{% url 'index' %}">login here</a></h4>
