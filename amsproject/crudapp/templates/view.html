@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/view.css' %}">
+{% endblock %}
+
+
+{% block content %}
+      
+<div class="container top">
+    <h1 class="text-center">ASSIGNMENT MANAGEMENT</h1>
+    <div class="row  justify-content-center">
+        <div class="col-lg-9">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Full name</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Cover</th>
+                    <th>File</th>  
+                    <th>Action</th> 
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% if request.user.is_student %}
+
+                  {% for i in users_dis %}
+
+                  <h1>{{i.id}}</h1>
+                  <tr>
+                    <th>{{i.orderNo}}</th>
+                    <td>{{i.name}}</td>
+                    <td>{{i.sub}}</td>
+                    <td><a href="{{i.img.url}}"><img width="80" src="{{i.img.url}}" alt="img1"></a></td>
+                    <td><a class="filecls" href="{{i.pdf.url}}">{{i.sub}}.pdf</a></td>
+                    
+                    <td>
+                      <a href="{% url 'removeitem' aid=i.id %}"><button class="btn btn-danger">Delete</button></a>
+                      <a href="{% url 'edititem' aid=i.id %}"><button class="btn btn-warning">Edit</button></a>
+                    </td>
+                    {% if i.approve %}
+                    <td>
+                      <p class="text-center badge bg-warning text-dark py-2 px-3">Approved</p>
+                    </td>
+                    {% elif i.reject %}
+                    <td>
+                      <p class="text-center badge bg-danger text-dark py-2 px-3">Reject</p>
+                    </td>
+                    {% else %}
+                    <td>
+                      <p class="text-center badge badge-success text-dark py-2 px-3">Processing</p>
+                    </td>
+                    {% endif %}
+
+                  </tr>
+                  {%  endfor %}
+
+                  {% else %}
+
+                  {% for j in dis_all %}
+                  <tr>
+                    <th>{{j.orderNo}}</th>
+                    <td>{{j.name}}</td>
+                    <td>{{j.sub}}</td>
+                    <td><a href="{{j.img.url}}"><img width="80" src="{{j.img.url}}" alt="img1"></a></td>
+                    <td><a class="filecls" href="{{j.pdf.url}}">{{j.sub}}.pdf</a></td>
+                    
+                    <td>
+                      <a href="{% url 'removeitem' aid=j.id %}"><button class="btn btn-danger">Delete</button></a>
+                      <a href="{% url 'edititem' aid=j.id %}"><button class="btn btn-warning">Edit</button></a>
+                    </td>
+
+
+                    {% if j.approve %}
+                    <td>
+                      <p class="text-center badge bg-warning text-dark py-2 px-3">Approved</p>
+                    </td>
+                    {% elif j.reject %}
+                    <td>
+                      <p class="text-center badge bg-danger text-dark py-2 px-3">Reject</p>
+                    </td>
+                    {% else %}
+                    <td>
+                      <p class="text-center badge badge-success text-dark py-2 px-3">Processing</p>
+                    </td>
+                    {% endif %}
+
+                  </tr>
+                  {%  endfor %}
+                  {% endif %}
+
+
+             
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

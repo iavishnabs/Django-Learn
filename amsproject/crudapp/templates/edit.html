@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/edit.css' %}">
+{% endblock %}
+
+
+{% block content %}
+      
+    <style>
+        
+    </style>
+
+ 
+<div class="container top2">
+   
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h1 class="mb-5">UPDATE DATA</h1>
+          <form class="row g-3" action="{% url 'edititem' aid=im.id %}" enctype="multipart/form-data" method="post">
+              {% csrf_token %}
+           
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-3 me-2">
+                            <label class="form-label">index</label>
+                            <input type="number" class="form-control" value="{{im.orderNo}}" name="ord">
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Full Name" value="{{im.name}}" name="usname">
+                        </div>
+                    </div>
+                  
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Subject</label>
+                  <input type="text" class="form-control"  placeholder="Subject" value="{{im.sub}}" name="subj">
+                </div>
+
+                <div class="col-12">
+                  <label  class="form-label">Cover Page</label>
+                  <input type="file" class="form-control"  value="{{im.img.url}}" name="mycover"> 
+                  <div class="form-text text-danger">choosed file: {{im.img.url}}</div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">File</label>
+                  <input type="file" class="form-control" value="{{im.pdf.url}}" name="myfile" >
+                  <div class="form-text text-danger">choosed file: {{im.pdf.url}}</div>
+                </div> 
+
+                {% if request.user.is_teacher %}
+                <div class="col-12">
+                  <label class="form-label">Update the status</label>
+                            <div class="pt-2">
+                                <input type="checkbox"  name="appr">
+                                <span>Approve</span><br>
+                              
+                                <input type="checkbox"  name="rej">
+                                <label for="">Reject</label>
+                          </div>
+                </div>
+                {% endif %} 
+
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-dark text-light form-control py-3">Update</button>
+                </div>
+              </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

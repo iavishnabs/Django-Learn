@@ -1,0 +1,22 @@
+body{
+    background-color: cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.top2{
+    margin-top: 5%;
+}
+h1{
+    margin-bottom: 2%;
+    color: rgb(10, 10, 10);
+}
+form label{
+    color: aliceblue;
+    font-size: 17px;
+    font-weight: 500;
+} 
+form{
+   
+    padding-bottom: 20px;
+    box-shadow: 1px 1px 3px rgb(8, 86, 65);
+}

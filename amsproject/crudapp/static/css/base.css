@@ -1,0 +1,32 @@
+
+body{
+    background-color: rgb(227, 237, 246);
+}
+
+.navbar-brand{
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.at{
+    color: red;
+}
+.at:hover{
+    color: black;
+}
+.navbar-brand:hover{
+    color: red;
+}
+.nav-link{
+    color: black;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+ul li{
+    padding-right: 6%;
+}
+ul li a:hover{
+    color: red !important;
+}

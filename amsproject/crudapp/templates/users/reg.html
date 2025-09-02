@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/reg.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container top2">
+   
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h1 class="mb-5 text-center">SIGN UP here</h1>
+
+
+            <form class="row g-3" action=""  method="post">
+               {% csrf_token %}
+                <div class="col-md-12">
+
+                    <div class="row pt-3 mx-2">
+                        <div class="col-md me-2 ">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" name="uname">
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control"  name="pswd">
+                        </div>
+                    </div>
+
+                    <div class="row mx-2">
+                        <div class="col-md me-2">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name="emailid">
+                          </div>
+                          <div class="col-md">
+                            <label class="form-label">Phone No.</label>
+                            <input type="number" class="form-control" name="phn">
+                          </div>
+                    </div>
+
+                    <div class="row pt-3 mx-2">
+                        <div class="col-md">
+                          
+                            <label class="form-label">Select Your Role</label>
+                            <div class="pt-2">
+                                <input type="checkbox"  name="tch">
+                                <label for="">I'm Teacher</label><br>
+                              
+                                <input type="checkbox"  name="std">
+                                <label for="">I'm Student</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pt-4 pb-3 mx-2">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-dark text-light form-control py-3">SignUp</button>
+                          </div>
+                    </div>
+                </div>
+              </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

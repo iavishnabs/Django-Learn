@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/add.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}"> 
+{% endblock %}
+
+  
+{% block content %}
+      
+
+<div class="container top2">
+   
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h1 class="mb-5">ADD ASSIGNMENT</h1>
+
+
+            <form class="row g-3" action="" enctype="multipart/form-data" method="post">
+               {% csrf_token %}
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-3 me-2">
+                            <label class="form-label">index</label>
+                            <input type="number" class="form-control" name="index">
+                        </div>
+                        <div class="col-md">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Full Name" name="fname">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Subject</label>
+                  <input type="text" class="form-control"  placeholder="Subject" name="subject">
+                </div>
+
+                <div class="col-12">
+                  <label  class="form-label">Cover Page</label>
+                  <input type="file" name="mycover" class="form-control" > 
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label">File</label>
+                  <input type="file" name="myfile" class="form-control" >
+                </div>
+
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-dark text-light form-control py-3">Add</button>
+                </div>
+              </form>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
